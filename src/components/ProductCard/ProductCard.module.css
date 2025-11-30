@@ -1,0 +1,152 @@
+/* src/components/ProductCard/ProductCard.module.css */
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card {
+  width: 260px;
+  border-radius: 24px;
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.14s ease;
+  border: 1px solid var(--border-subtle);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
+}
+
+.head {
+  position: relative;
+  min-height: 170px;
+  background-size: cover;
+  background-position: center;
+}
+
+.head::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(17, 24, 39, 0.75), transparent 60%);
+}
+
+/* Исправляем ценник - используем CSS переменные */
+.price {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 1;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background-color: var(--bg-card);
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.currency {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.add-to-cart {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  z-index: 1;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(15, 23, 42, 0.65);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  transition: all 0.16s ease;
+}
+
+.add-to-cart img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
+.add-to-cart:hover {
+  background-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Исправляем рейтинг */
+.rating {
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background-color: rgba(17, 24, 39, 0.72);
+  color: #fef9c3;
+  font-size: 13px;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.rating img {
+  width: 14px;
+  height: 14px;
+}
+
+.footer {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.description {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Улучшаем видимость в темной теме */
+[data-theme="dark"] .head::after {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 60%);
+}
+
+[data-theme="dark"] .rating {
+  background-color: rgba(0, 0, 0, 0.72);
+}
+
+[data-theme="dark"] .add-to-cart {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+[data-theme="dark"] .price {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+}

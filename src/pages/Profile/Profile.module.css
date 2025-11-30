@@ -1,0 +1,249 @@
+/* src/pages/Profile/Profile.module.css */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.backButton {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 8px 16px;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  background-color: var(--accent);
+  color: white;
+  transform: translateX(-2px);
+}
+
+.notAuth {
+  text-align: center;
+  padding: 40px;
+  background: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.notAuth p {
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.infoCard {
+  background: var(--bg-card);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.infoCard h3 {
+  margin: 0 0 16px 0;
+  color: var(--text-primary);
+  font-size: 18px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 8px 0;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 80px;
+  margin-right: 16px;
+}
+
+.value {
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.addressesSection {
+  background: var(--bg-card);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sectionHeader h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 18px;
+}
+
+.addAddressForm {
+  background: var(--bg-elevated);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 20px;
+}
+
+.addAddressForm h4 {
+  margin: 0 0 16px 0;
+  color: var(--text-primary);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.formGrid input {
+  width: 100%;
+}
+
+.formActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.addressesList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.noAddresses {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary);
+}
+
+.noAddresses p {
+  margin: 8px 0;
+}
+
+.addressCard {
+  background: var(--bg-elevated);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  transition: box-shadow 0.2s ease;
+}
+
+.addressCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.addressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.addressHeader h4 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.addressDetails p {
+  margin: 4px 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.comment {
+  margin-top: 8px;
+  padding: 8px;
+  background: rgba(108, 92, 231, 0.05);
+  border-radius: 6px;
+  border-left: 3px solid var(--accent);
+}
+
+.comment strong {
+  color: var(--text-primary);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .backButton {
+    align-self: flex-start;
+  }
+  
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sectionHeader {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .addressHeader {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  
+  .formActions {
+    flex-direction: column;
+  }
+}
+/* Добавим новые стили в Profile.module.css */
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.requiredNote {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.addressDetails p {
+  margin: 4px 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.addressDetails strong {
+  color: var(--text-primary);
+  min-width: 100px;
+  display: inline-block;
+}

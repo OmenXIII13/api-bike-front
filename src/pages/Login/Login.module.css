@@ -1,0 +1,98 @@
+/* src/pages/Login/Login.module.css */
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  color: var(--text-primary); /* Явно задаем цвет текста */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.field label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Стили для инпутов с учетом темы */
+.field input {
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.field input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+  background-color: var(--bg-card);
+}
+
+.field input::placeholder {
+  color: var(--text-muted);
+}
+
+.links {
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.links a {
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--accent-hover);
+}
+
+.error {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(248, 113, 113, 0.12);
+  color: var(--danger);
+  font-size: 13px;
+  border: 1px solid rgba(248, 113, 113, 0.2);
+}
+
+/* Стили для кнопок */
+.button-accent {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.button-accent:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 20px 40px rgba(76, 81, 191, 0.35);
+}
+
+.button-accent:active {
+  transform: translateY(0);
+}

@@ -1,0 +1,101 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary); /* Явно задаем цвет */
+}
+
+.image {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.price {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.actions {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.minus,
+.plus,
+.remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  background-color: var(--accent-soft);
+  transition:
+    background-color 0.2s ease,
+    transform 0.08s ease,
+    box-shadow 0.2s ease;
+}
+
+.minus img,
+.plus img,
+.remove img {
+  width: 14px;
+  height: 14px;
+}
+
+.minus,
+.plus {
+  background-color: var(--accent);
+}
+
+.minus:hover,
+.plus:hover {
+  background-color: var(--accent-hover);
+  box-shadow: 0 10px 20px rgba(76, 81, 191, 0.3);
+}
+
+.remove {
+  background-color: transparent;
+}
+
+.remove:hover {
+  background-color: rgba(239, 68, 68, 0.06);
+}
+
+.number {
+  min-width: 24px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}

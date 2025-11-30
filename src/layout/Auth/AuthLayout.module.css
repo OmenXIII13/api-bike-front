@@ -1,0 +1,98 @@
+/* src/layout/Auth/AuthLayout.module.css */
+.layout {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  background: radial-gradient(circle at top left, var(--bg-accent-soft) 0, var(--bg-elevated) 40%, var(--bg-body) 100%);
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo img {
+  height: 32px;
+  width: auto;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.theme-toggle:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(108, 92, 231, 0.15);
+}
+
+.theme-toggle svg {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.theme-toggle:hover svg {
+  opacity: 1;
+}
+
+.content {
+  width: 100%;
+  max-width: 420px;
+  padding: 28px 24px 32px;
+  border-radius: 24px;
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .layout {
+    padding: 24px 12px;
+  }
+  
+  .logo {
+    top: 16px;
+    left: 16px;
+    gap: 12px;
+  }
+  
+  .logo img {
+    height: 28px;
+  }
+  
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .content {
+    padding: 24px 20px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 20px 16px 24px;
+  }
+}

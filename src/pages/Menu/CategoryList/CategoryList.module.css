@@ -1,0 +1,131 @@
+.categories {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin-top: 30px;
+}
+
+.categoryControls {
+	display: flex;
+	gap: 12px;
+	margin-bottom: 20px;
+	flex-wrap: wrap;
+}
+
+.controlButton {
+	padding: 8px 16px;
+	background: var(--accent-soft);
+	color: var(--accent);
+	border: 1px solid var(--accent);
+	border-radius: 20px;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.controlButton:hover {
+	background: var(--accent);
+	color: white;
+	transform: translateY(-1px);
+}
+
+.category {
+	border: 1px solid var(--border-subtle);
+	border-radius: 16px;
+	overflow: hidden;
+	background: var(--bg-card);
+	box-shadow: var(--shadow-soft);
+}
+
+.categoryHeader {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 24px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+	color: var(--text-primary);
+	font-size: 18px;
+}
+
+.categoryHeader:hover {
+	background: var(--bg-elevated);
+}
+
+.categoryTitle {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-size: 20px;
+	font-weight: 600;
+	margin: 0;
+}
+
+.count {
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--text-secondary);
+	background: var(--accent-soft);
+	padding: 4px 12px;
+	border-radius: 20px;
+}
+
+.arrow {
+	font-size: 16px;
+	color: var(--text-secondary);
+	transition: transform 0.3s ease;
+	min-width: 20px;
+	text-align: center;
+}
+
+.categoryContent {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease, opacity 0.3s ease;
+	opacity: 0;
+}
+
+.categoryContent.open {
+	max-height: 5000px; /* Достаточно большое значение для анимации */
+	opacity: 1;
+}
+
+/* Анимация появления категорий */
+.category {
+	animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+	.categories {
+		gap: 12px;
+	}
+	
+	.categoryHeader {
+		padding: 16px 20px;
+	}
+	
+	.categoryTitle {
+		font-size: 18px;
+	}
+	
+	.controlButton {
+		font-size: 13px;
+		padding: 6px 12px;
+	}
+}
